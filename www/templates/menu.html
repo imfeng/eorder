@@ -1,0 +1,46 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar style="background:#fd9426">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <a class="button button-clear" href="#/app/cart">
+        <i class="icon ion ion-ios-cart-outline"></i><sup>2</sup>
+      </a>
+      <a class="button button-clear" href="#/app/settings">
+        <i class="icon ion ion-ios-gear-outline"></i>
+      </a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close class="item item-avatar">
+          <img src="img/sundar.jpg"/>
+          <h3>Handsome Feng</h3>
+          <p>Eat life, happiness Life</p>
+        </ion-item>
+        <ion-item menu-close href="#/app/home">
+          首頁
+        </ion-item>
+        <ion-item menu-close href="#/app/favourites">
+          收藏
+        </ion-item>
+        <ion-item menu-close href="#/app/myreviews">
+          瀏覽紀錄
+        </ion-item>
+        <ion-item menu-close href="#/app/notifications">
+          收集到的折價券
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

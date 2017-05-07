@@ -1,0 +1,49 @@
+<ion-view view-title="Settings">
+    <ion-nav-buttons side="right">
+        <a href="#/login" class="button button-clear"><i class="icon ion-log-out"></i></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="item item-avatar">
+            <img src="img/sundar.jpg" />
+            <h2>Handsome Fang</h2>
+            <p>Keep your Position</p>
+        </div>
+        <ion-list>
+	        <ion-item class="item item-toggle">
+	            自動蒐集鄰近優惠
+	            <label class="toggle toggle-positive">
+	                <input type="checkbox">
+	                <div class="track">
+	                    <div class="handle"></div>
+	                </div>
+	            </label>
+	        </ion-item>
+            <ion-item href="#/app/history" class="item item-icon-right">
+                消費紀錄
+                <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+        	<ion-item class="item-divider">Basic Settings</ion-item>
+        	<ion-item ng-click="openChangePasswordModel()" class="item item-icon-right">
+        		Change Password
+        		<i class="icon ion-ios-arrow-right"></i>
+        	</ion-item>
+            <!--
+        	<ion-item href="#/app/manageaddress" class="item item-icon-right">
+        		Manage Address
+        		<i class="icon ion-ios-arrow-right"></i>
+        	</ion-item>
+            
+
+        	<ion-item class="item-divider">More</ion-item>
+        	<ion-item ng-click="openAboutModel()" class="item item-icon-right">About Us <i class="icon ion-ios-arrow-right"></i></ion-item>
+        	<ion-item ng-click="openTermsModel()" class="item item-icon-right">Terms &amp; conditions
+                <i class="icon ion-ios-arrow-right"></i></ion-item>
+        	<ion-item ng-click="openPrivacyModel()" class="item item-icon-right">Privacy &amp; Policies
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+            <ion-item>Rate this App</ion-item>
+            <ion-item>Share this App</ion-item>
+            -->
+    	</ion-list>
+    </ion-content>
+</ion-view>

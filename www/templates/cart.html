@@ -1,0 +1,41 @@
+<ion-view view-title="Cart">
+  <ion-content class="padding" style="text-align:center">
+        <table style="padding:5px;">
+            <thead style="background:#53d769;">
+                <th>編號</th>
+                <th>項目</th>
+                <th>數量</th>
+                <th>單價</th>
+                <th>總共</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="dish in cart track by $index">
+                    <td>{{$index}}</td>
+                    <td>{{dish.name}}</td>
+                    <td><i class="ion-ios-minus"></i> 1 <i class="ion-plus-circled"></i></td>
+                    <td>{{dish.price}}</td>
+                    <td>{{dish.price}}</td>
+                    <td><i class="ion-ios-close"></i></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>拿鐵咖啡</td>
+                    <td><i class="ion-ios-minus"></i> 1 <i class="ion-plus-circled"></i></td>
+                    <td>90</td>
+                    <td>90</td>
+                    <td><i class="ion-ios-close"></i></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>韓式辣雞</td>
+                    <td><i class="ion-ios-minus"></i> 2 <i class="ion-plus-circled"></i></td>
+                    <td>150</td>
+                    <td>300</td>
+                    <td><i class="ion-ios-close"></i></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>$ 490</h3>
+        <button class="button button-block button-outline button-assertive">付款</button>
+  </ion-content>
+</ion-view>

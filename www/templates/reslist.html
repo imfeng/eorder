@@ -1,0 +1,72 @@
+<ion-view id="view-resList" view-title="List of resturent">
+    <style>
+    #view-resList body, #view-resList ion-content{
+        background-color: #f8f8f8;
+    }
+    .item-res {
+        padding: 0;
+    }
+    
+    .item-res .item {
+        padding-top: 0;
+    }
+    
+    .item-res .item>h2 {
+        margin-top: 13px;
+        margin-bottom: 8px;
+    }
+    .item-res .item>img {
+            top: 11px;
+    left: 11px;
+    max-width: 50px;
+    max-height: 50px;
+    }
+    </style>
+    <ion-nav-buttons side="right">
+        <a class="button button-clear" href="#/app/mapview">
+            <i class="icon ion-map"></i>
+        </a>
+        <!--<button class="button button-clear" ng-click="openFilter($event)">
+            <i class="icon ion-ios-settings"></i>
+        </button>-->
+    </ion-nav-buttons>
+  <ion-content>
+        <div ng-repeat="res in resList track by $index" class="list card">
+            <div class="item item-body item-res" ng-click="goRestaurant('{{res.slug}}')">
+                <img class="full-image" ng-src="{{res.mainPic}}">
+                <div class="item item-avatar">
+                    <img ng-src="{{res.profile}}">
+                    <h2>{{res.name}}</h2>
+                    <a href="#" class="subdued">{{res.likesNum}} Like</a>
+                    <a href="#" class="subdued">{{res.commentsNum}} Comments</a>
+                    <span class="rating rating-3">4.6</span> 
+                </div>
+            </div>
+            
+        </div>
+<!--
+        <ion-list>
+        	<ion-item href="#/app/viewres" class="item item-thumbnail-left list-inset">
+        		<img src="img/res1.jpg"/>
+        		<h2>Mot Hai ba</h2>
+                <span class="rating rating-3">3.6</span> <span style="font-size:12px;">20 ratings</span>
+                <p><i class="ion-ios-location-outline"></i> Chennai, India</p>
+        		<p>20 mins - 3 km</p>
+        	</ion-item>
+            <ion-item href="#/app/viewres" class="item item-thumbnail-left list-inset">
+                <img src="img/res1.jpg"/>
+                <h2>Mot Hai ba</h2>
+                <span class="rating rating-3">3.6</span> <span style="font-size:12px;">20 ratings</span>
+                <p>20 mins - 3 km</p>
+            </ion-item>
+            <ion-item href="#/app/viewres" class="item item-thumbnail-left list-inset">
+                <img src="img/res1.jpg"/>
+                <h2>Mot Hai ba</h2>
+                <span class="rating rating-3">3.6</span> <span style="font-size:12px;">20 ratings</span>
+                <p>20 mins - 3 km</p>
+            </ion-item>
+-->
+    	</ion-list>
+  </ion-content>
+    
+</ion-view>

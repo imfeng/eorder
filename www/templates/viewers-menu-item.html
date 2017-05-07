@@ -1,0 +1,33 @@
+<div class="list">
+    <a class="item" href="#">
+    名稱
+    <span class="item-note">
+      {{tempDish.name}}
+    </span>
+  </a>
+    <a class="item" href="#">
+    價格
+    <span class="item-note">
+      {{tempDish.price}}
+    </span>
+  </a>
+
+    <label class="item item-input item-select" ng-repeat="(key,t) in tempDish.type">
+    <div class="input-label">
+      {{key}}
+    </div>
+    <select ng-repeat="spec in t" ng-model="tempDish.spec[$index] || 1">
+      <option ng-checked="$index==0" >{{spec}}</option>
+    </select>
+  </label>
+    <a class="item" href="#">
+    數量
+<button ng-click="(tempDish.amount = tempDish.amount+1) " style="float:right" class="button button-small button-assertive button-clear"><i class="icon ion-plus-circled menu-plus"></i></button>
+    <span class="item-note">
+      {{tempDish.amount}}
+    </span>
+    
+    <button ng-click="(tempDish.amount = tempDish.amount-1)" style="float:right" class="button button-small button-assertive button-clear"><i class="icon ion-minus-circled menu-plus"></i></button>
+  </a>
+
+</div>

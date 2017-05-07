@@ -1,0 +1,38 @@
+<ion-content scroll="false" style="text-align:center">
+    <div style="height:160px;background:url('img/f-res.jpg');"></div>
+    <!-- <img src="img/logo-res.png"/> -->
+    <h2 style="font-weight:200">Welcome to BeEats App</h2>
+	<div class="button-group">
+    <button ng-click="showWhat(1)" class="button button-outline button-royal button-small">登入</button>
+    <button ng-click="showWhat(2)" class="button button-outline button-royal button-small">註冊</button>
+	</div>
+    <div ng-show="login=='true'" ng-hide="login=='false'" style="width:300px;margin:10% auto;">
+        <div class="list list-inset">
+		  <label class="item item-input">
+		    <input type="text" ng-model="user.lemail" placeholder="Email Address">
+		  </label>
+		  <label class="item item-input">
+		    <input type="password" ng-model="user.lpassword" placeholder="Password">
+		  </label>
+		  <button ng-click="loginButton()" class="button button-block" style="background:#3B9792;color:#fff">Login</button>
+		</div>
+        <a href="#/login" class="button button-clear button-small" style="color:#3B9792">Back</a>
+    </div>
+    <div ng-show="signup=='true'" ng-hide="signup=='false'" style="width:300px;margin:10% auto;">
+        <div class="list list-inset">
+		  <label class="item item-input">
+		    <input type="text" ng-model="user.fullname" placeholder="Full name">
+		  </label>
+		  <label class="item item-input">
+		    <input type="text" ng-model="user.email" placeholder="Email Address">
+		  </label>
+		  <label class="item item-input">
+		    <input type="tel" ng-model="user.mobile" placeholder="Mobile Number">
+		    <!-- <input type="password" ng-model="user.password" placeholder="Password"> -->
+		  </label>
+		  <a class="button button-block" style="background:#3B9792;color:#fff" href="#/mobileValidation">立即註冊</a>
+		  <!-- <button ng-click="signUpButton()" class="button button-block" style="background:#3B9792;color:#fff">Signup</button> -->
+		</div>
+        <a href="#/login" class="button button-clear button-small" style="color:#3B9792">Back</a>
+    </div>
+</ion-content>

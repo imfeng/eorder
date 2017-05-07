@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+
+<head>
+    <title>Firebase ChatBox</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyALKyR22f4JKFGDvMWO1ilcBXX0r2e8cNo",
+            authDomain: "restaurant-f9d1e.firebaseapp.com",
+            databaseURL: "https://restaurant-f9d1e.firebaseio.com",
+            projectId: "restaurant-f9d1e",
+            storageBucket: "restaurant-f9d1e.appspot.com",
+            messagingSenderId: "1053385855489"
+        };
+        firebase.initializeApp(config);
+        var data = {
+            'orders': []
+        }
+        $(document).ready(function() {
+            initAuth().then(function(user) {
+                console.log('Successed!');
+                console.log('Hello! ', user.uid);
+                var ref = firebase.database().ref('restaurants/');
+                /**/
+                onWatchdata();
+
+                console.log(ref.set(data).then());
+            }, function(err) {
+                console.warn(err);
+            });;
+
+        });
+
+        function onWatchdata() {
+            firebase.database().ref('restaurants/1/orderLists').on('child_added', function(snapshot) {
+                console.log('child_added!!');
+                console.log(snapshot.val());
+            });
+        }
+
+        function pushOrder(rid, orderName, orderId) {
+            let data = {
+                'orderId': orderId,
+                'orderName': orderName
+            }
+            firebase.database().ref('restaurants/' + rid + '/orderLists').push(data).then(function(scc) {
+                console.log('seted!');
+            }, function(err) {
+                console.warn(err);
+            });;
+
+        }
+
+        function writeUserData(rid) {
+            firebase.database().ref('restaurants/' + rid).set({
+                'orderLists': [{
+                    'orderId': 'a001'
+                }]
+            }).then(function(scc) {
+                console.log('seted!');
+            }, function(err) {
+                console.warn(err);
+            });
+        }
+
+        function initAuth() {
+            return firebase.auth().signInAnonymously();
+        }
+    </script>
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <h1>Hello Would!</h1>
+
+</body>
+
+</html>

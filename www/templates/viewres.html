@@ -1,0 +1,43 @@
+<ion-view view-title="店家資訊">
+    <ion-content>
+        <style>
+            .item .menu-plus {
+                font-size: 18px;
+            }
+            
+            .item .menu-amount.badge {
+                top: 27px;
+                right: 64px;
+            }
+        </style>
+        <div class="">
+            <a href="#/app/gallery"><img src="{{resInfo.list.mainPic}}" style="width:100%;"></a>
+        </div>
+        <div class="info-card">
+            <h3>{{resInfo.list.name}}</h3>
+            <p style="color:#FFC107"><i class="ion ion-ios-star"></i><i class="ion ion-ios-star"></i><i class="ion ion-ios-star"></i><i class="ion ion-ios-star"></i><i class="ion ion-ios-star"></i> <span style="color:#8A8A8A;">- <a href="">{{resInfo.list.ratings}} ratings</a></span></p>
+            <p><i class="ion ion-ios-location"></i>{{resInfo.list.location}}</p>
+            <p>{{resInfo.list.time}}</p>
+            <a class="button"><i class="ion ion-ios-telephone"></i></a>
+            <!--<a class="button"><i class="ion ion-ios-email"></i></a>-->
+            <!--<a class="button"><i class="ion ion-ios-world-outline"></i></a>-->
+            <a class="button"><i class="ion ion-social-facebook"></i></a>
+            <button ng-click="showConfirm()" class="button"><i class="icon ion-ios-compose-outline"></i></button>
+            <a class="button"><i class="ion ion-ios-navigate-outline"></i></a>
+        </div>
+        </div>
+
+
+        <div class="list">
+            <div class="item item-divider">MENU</div>
+            <div class="item item-avatar" ng-repeat="dish in resInfo.menu track by $index">
+                <img src="img/chinese.jpg">
+                <span class="menu-amount badge" ng-class="((dish.amount>0)?'badge-calm':'zero')">{{dish.amount}}</span>
+                <button ng-click="addDish($index)" style="float:right" class="button button-assertive button-clear"><i class="icon ion-plus-circled menu-plus"></i></button>
+                <h3>{{dish.name}}</h3>
+                <p>價格： ${{dish.price}}</p>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>
